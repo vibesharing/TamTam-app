@@ -1,12 +1,112 @@
-body{
-    padding-top: 70px;
+body {
+  background-color: #152836;
+
+
 }
-.navbar-border{
-	border-bottom: 3px solid #F0DB4F;
+
+.container-fluid{
+  margin-left: 100px;
+  text-align: center;
 }
-.navbar-header img{
-	transition: 0.4s;
+.demo-gallery > ul {
+  margin-bottom: 0;
 }
-.navbar-header img:hover{
-	transform: rotate(360deg);
-}  
+.demo-gallery > ul > li {
+  float: left;
+  margin-bottom: 15px;
+  margin-right: 0px;
+  width: 200px;
+}
+.demo-gallery > ul > li a {
+  border: 3px solid #FFF;
+  border-radius: 3px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  float: left;
+}
+.demo-gallery > ul > li a > img {
+  -webkit-transition: -webkit-transform 0.15s ease 0s;
+  -moz-transition: -moz-transform 0.15s ease 0s;
+  -o-transition: -o-transform 0.15s ease 0s;
+  transition: transform 0.15s ease 0s;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  height: 100%;
+  width: 100%;
+}
+.demo-gallery > ul > li a:hover > img {
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  transform: scale3d(1.1, 1.1, 1.1);
+}
+.search{
+  position: absolute;
+
+  margin-left: 50vh;
+  margin-top: 50vh;
+}
+.row{
+  height:50vh;
+}
+.description{
+  background-color: #E0E1E5;
+  height:50vh;
+}
+
+.actors{
+  background-color: #F5F3F4;
+  height:50vh;
+
+
+}
+.attributes{
+  background-color: #BDBBBC;
+  height:50vh;
+
+}
+.trailer{
+  background-color: #E0E1E5;
+  height:50vh;
+}
+h2{
+  display: none;
+}
+#search{
+  width: 33vw;
+  height: 10vh;
+}
+#search-button{
+  width: 20vw;
+  height: 10vh;
+}
+
+.slide-linear-right.ng-enter {
+  transition:1.5s linear all;
+  transform:translateX(-100%);
+}
+.slide-linear-right.ng-enter.ng-enter-active {
+  transform:translateX(0);
+}
+
+.slide-linear-left.ng-enter {
+  transition:1.5s linear all;
+  transform:translateX(100%);
+}
+.slide-linear-left.ng-enter.ng-enter-active {
+  transform:translateX(0);
+}
+
+.slide-linear-up.ng-enter {
+  transition:1.5s linear all;
+  transform:translateY(100%);
+}
+.slide-linear-up.ng-enter.ng-enter-active {
+  transform:translateY(0);
+}
+.slide-linear-down.ng-enter {
+  transition:1.5s linear all;
+  transform:translateY(-100%);
+}
+.slide-linear-down.ng-enter.ng-enter-active {
+  transform:translateY(0);
+}

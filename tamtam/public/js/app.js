@@ -20,7 +20,7 @@ function run($rootScope, $location){
 angular.module('app', ['ngRoute'])
     .config(config)
     .controller('mainController', mainController)
+		.service('mainService', mainService)
     .service('todoService', todoService)
     /*.factory('', )*/
     .run(run);
-
