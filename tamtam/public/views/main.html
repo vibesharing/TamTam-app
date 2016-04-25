@@ -1,22 +1,91 @@
-<div class="demo-gallery" ng-show="!bool">
-        <ul id="lightgallery" class="list-unstyled row" style="text-align: center;">
-                <li ng-repeat="film in popular.results" class="col-xs-6 col-sm-4 col-md-5">
-                        <a>
-                                <img class="img-responsive" ng-src="http://image.tmdb.org/t/p/w500/{{film.poster_path}}">
-                        </a>
-                </li>
 
-        </li>
-</ul>
+<div class="row">
+        <div class="col-md-7">
+                <div class="row">
+
+
+                        <div class="col-md4">
+                                <div class="search" >
+                                        <form>
+                                                <input type="text" id="search" name="name" ng-model="movieToSearch" value="choose your movie">
+                                                <button type="submit" id="search-button" ng-click="bool= !bool; search(movieToSearch); click()">Search</button>
+                                        </form>
+
+                                </div>
+
+                        </div>
+                        <div class="col-md-8">
+                                <div class="col-md-3 attributes slide-linear-down">
+
+
+                                </div>
+
+                        </div>
+                </div>
+                <div class="row">
+                        <div class="col-md-4">
+                                <iframe id="videoFrame" class="video w100" width="100%" height="100%" src="" frameborder="0" allowfullscreen></iframe>
+
+                                <li><img  width="100%" height="100%" ng-src="{{movie.Poster}}" alt=""/></li>
+                        </div>
+                        <div class="col-md-8 information">
+                                <ul class="list-unstyled" ng-if="bool">
+                                        <li><h1>{{movie.Title}} ({{movie.Year}})</h1></li>
+                                        <li><h4>Runtime: {{movie.Runtime}}  -  {{movie.Genre}} </h4></li>
+                                        <li>Rating: {{movie.imdbRating}}</li>
+                                        <li>Runtime: {{movie.Runtime}}</li>
+                                        <li>Director: {{movie.Director}}</li>
+                                        <li>Actors: {{movie.Actors}}</li>
+                                        <br>
+                                        <br>
+
+
+                                        <li>Plot: {{movie.Plot}}</li>
+
+
+                                </ul>
+                                <div class="demo-gallery">
+                                        <ul id="lightgallery" class="list-unstyled row" style="text-align: center;">
+                                                <li ng-repeat="movie in movies" class="col-xs-6 col-sm-4 col-md-5">
+                                                        <a>
+                                                                <img class="img-responsive" ng-src="{{movie.Poster}}">
+
+
+                                                        </a>
+                                                </li>
+
+                                        </li>
+                                </ul>
+                        </div>
+
+
+                        </div>
+
+                </div>
+
+
+        </div>
+        <div class="col-md-5">
+                <div class="demo-gallery">
+                        <ul id="lightgallery" class="list-unstyled row" style="text-align: center;">
+                                <li ng-repeat="film in popular.results" class="col-xs-6 col-sm-4 col-md-5">
+                                        <a>
+                                                <img class="img-responsive" ng-src="http://image.tmdb.org/t/p/w500/{{film.poster_path}}">
+                                        </a>
+                                </li>
+
+                        </li>
+                </ul>
+        </div>
+
+
 </div>
 
-<div class="search" ng-show="!bool">
-        <form>
-                <input type="text" id="search" name="name" ng-model="movieToSearch" value="choose your movie">
-                <button type="submit" id="search-button" ng-click="bool= !bool; search(movieToSearch); click()">Search</button>
-        </form>
-
 </div>
+
+
+<!--
+
 <div class="row">
         <div class="col-md-9 description slide-linear-right" ng-if="bool">
                 <li>{{movie.Title}}</li>
@@ -44,4 +113,4 @@
                 <iframe id="videoFrame" class="video w100" width="440" height="360" src="" frameborder="0" allowfullscreen></iframe>
 
         </div>
-</div>
+</div> -->

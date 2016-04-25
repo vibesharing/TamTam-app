@@ -27,7 +27,7 @@ function mainController($http, $scope, mainService) {
       // console.log(data);
       $scope.movie = data;
       $scope.movies.push($scope.movie);
-      console.log();
+      console.log($scope.movies);
     }).error(function(data, status, headers, config) {
 
       alert(status);
