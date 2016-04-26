@@ -57,7 +57,7 @@ function mainController($http, $scope, mainService) {
     var request = gapi.client.youtube.search.list({
       part: "snippet",
       type: "video",
-      q: encodeURIComponent($scope.movieToSearch+'trailer').replace(/%20/g, "+"),
+      q: encodeURIComponent($scope.movieToSearch+'HD trailer').replace(/%20/g, "+"),
       maxResults: 1
       // order: "viewCount"
       // publishedAfter: "2015-01-01T00:00:00Z"
