@@ -5,15 +5,14 @@
 
 
                         <div class="col-md4">
-                                <div class="search" >
-                                        <form>
-                                                <input type="text" id="search" name="name" ng-model="movieToSearch" value="choose your movie">
-                                                <button type="submit" id="search-button" ng-click="bool= !bool; search(movieToSearch); click()">Search</button>
-                                        </form>
+                                <div class="search col-md-9" >
+                                                <input type="text" class="form-control" id="search" name="name" ng-model="movieToSearch" value="choose your movie">
+                                        </div><div class="search col-md-3" >        <button type="submit" class ="btn btn-default" id="search-button" ng-click="bool= true; search(movieToSearch); click()">Search</button>
 
                                 </div>
 
                         </div>
+
                         <div class="col-md-8">
                                 <div class="col-md-3 attributes slide-linear-down">
 
@@ -23,6 +22,7 @@
                         </div>
                 </div>
                 <div class="row">
+                        <br>
                         <div class="col-md-4">
                                 <iframe id="videoFrame" class="video w100" width="100%" height="100%" src="" frameborder="0" allowfullscreen></iframe>
 
@@ -44,10 +44,10 @@
 
 
                                 </ul>
-                                <div class="demo-gallery">
+                                <div class="demo-gallerie">
                                         <ul id="lightgallery" class="list-unstyled row" style="text-align: center;">
                                                 <li ng-repeat="movie in movies" class="col-xs-6 col-sm-4 col-md-5">
-                                                        <a>
+                                                        <a ng-click= "searchAgain(movie)" >
                                                                 <img class="img-responsive" ng-src="{{movie.Poster}}">
 
 
@@ -58,59 +58,26 @@
                                 </ul>
                         </div>
 
-
-                        </div>
-
                 </div>
 
-
         </div>
-        <div class="col-md-5">
-                <div class="demo-gallery">
-                        <ul id="lightgallery" class="list-unstyled row" style="text-align: center;">
-                                <li ng-repeat="film in popular.results" class="col-xs-6 col-sm-4 col-md-5">
-                                        <a>
-                                                <img class="img-responsive" ng-src="http://image.tmdb.org/t/p/w500/{{film.poster_path}}">
-                                        </a>
-                                </li>
 
+
+</div>
+<div class="col-md-5">
+        <div class="demo-gallery">
+                <ul id="lightgallery" class="list-unstyled row" style="text-align: center;">
+                        <li ng-repeat="film in popular.results" class="col-xs-6 col-sm-4 col-md-5">
+                                <a ng-click=" bool = true; search(film.original_title); clickpoupular(film.original_title)">
+                                        <img class="img-responsive" ng-src="http://image.tmdb.org/t/p/w500/{{film.poster_path}}">
+                                </a>
                         </li>
-                </ul>
-        </div>
+
+                </li>
+        </ul>
+</div>
 
 
 </div>
 
 </div>
-
-
-<!--
-
-<div class="row">
-        <div class="col-md-9 description slide-linear-right" ng-if="bool">
-                <li>{{movie.Title}}</li>
-                <li>{{movie.Actors}}</li>
-                <li>{{movie.Director}}</li>
-                <li>{{movie.Year}}</li>
-                <li>{{movie.imdbRating}}</li>
-                <li>{{movie.Plot}}</li>
-                <li>{{movie.Runtime}}</li>
-                <li>{{movie.Genre}}</li>
-
-        </div>
-
-        <div class="col-md-3 attributes slide-linear-down" ng-if="bool">
-                <li><img ng-src="{{movie.Poster}}" alt=""/></li>
-
-        </div>
-</div>
-<div class="row">
-        <div class="col-md-3 actors slide-linear-up" ng-if="bool">
-                <button ng-click="booll()">X</button>
-        </div>
-        <div class="col-md-9 trailer slide-linear-left" ng-if="bool">
-
-                <iframe id="videoFrame" class="video w100" width="440" height="360" src="" frameborder="0" allowfullscreen></iframe>
-
-        </div>
-</div> -->
