@@ -68,12 +68,13 @@ function mainController($http, $scope, mainService) {
       $('#videoFrame').attr('src', 'https://www.youtube.com/embed/' + $scope.result.items[0].id.videoId);
 
     });
-  }
+  };
   $scope.clickpoupular = function(u){
+    debugger
     var request = gapi.client.youtube.search.list({
       part: "snippet",
       type: "video",
-      q: encodeURIComponent(u+'trailer').replace(/%20/g, "+"),
+      q: encodeURIComponent(u +'trailer').replace(/%20/g, "+"),
       maxResults: 1
       // order: "viewCount"
       // publishedAfter: "2015-01-01T00:00:00Z"
