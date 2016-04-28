@@ -4,9 +4,9 @@ var todoSchema = new mongoose.Schema({
   description: String
 });
 var Todo = {
-    
+
     model: mongoose.model('Todo', todoSchema),
-    
+
     create: function(req, res) {
 		Todo.model.create({
 			description: req.body.description
@@ -30,6 +30,6 @@ var Todo = {
 		Todo.model.findByIdAndRemove(req.params.id, function(){
 			res.sendStatus(200);
 		})
-	} 
+	}
 }
 module.exports = Todo;
