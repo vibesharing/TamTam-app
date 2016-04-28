@@ -47,7 +47,7 @@
                                 <div class="demo-gallerie">
                                         <ul id="lightgallery" class="list-unstyled row" style="text-align: center;">
                                                 <li ng-repeat="movie in movies" class="col-xs-6 col-sm-4 col-md-5">
-                                                        <a ng-click= "searchAgain(movie)" >
+                                                        <a ng-click= "searchAgain(movie) ; clickpoupular(movie.Title)" >
                                                                 <img class="img-responsive" ng-src="{{movie.Poster}}">
 
 
